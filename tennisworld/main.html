@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="head.js"></script>
+    <script type="text/javascript">
+		mui.init()
+		mui.plusReady(function(){
+			var pages = ["main.html","rank.php","player.html"];
+			var arr=document.getElementsByClassName("mui-tab-item");
+			var styles = {
+				top:"45px",
+      	        bottom:"51px",
+			};
+			var objs=[];
+			var self = plus.webview.currentWebview();//取到当前的主页窗口
+			for (var i=0;i<arr.length;i++){
+				var sub=plus.webview.create(pages[i],pages[i],styles);
+				objs.push(sub);
+				!function(i){
+					arr[i].addEventListener("tap",function(){
+						for(var j=0;j<objs.length;j++){
+							if(j!=i) objs[j].hide();
+							else objs[j].show();
+						}
+						self.append(objs[i]);
+					})
+				}(i);
+			}
+			//默认触发第0个选项卡得tap事件。
+			mui.trigger(arr[0],"tap");
+	    })
+			
+	</script>
+    <style type="text/css">
+    	.mui-table{
+    		background-color: cornflowerblue;
+    	}
+    	
+    	.mui-slider-group{
+    		position:fixed;
+    	}
+    	#pullDown, #pullUp {padding:0 10px;height:30px;line-height:30px;color:#888;text-align:center}
+    	
+    </style>
+    
+</head>
+<body>	
+        <div id="wrapper">
+		<div id="scroller">
+		<div id="pullDown">
+			<span class="pullDownLabel">下拉刷新</span>
+		</div>
+	<div class="mui-content">
+        <div id="slider" class="mui-slider" style="margin-top: 40px;">
+          <div class="mui-slider-group mui-slider-loop">
+            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+              <a href="#">
+                <img src="img/4.jpg">
+              </a>
+            </div>
+            <!-- 第一张 -->
+            <div class="mui-slider-item">
+              <a href="#">
+                <img src="img/1.jpg">
+              </a>
+            </div>
+            <!-- 第二张 -->
+            <div class="mui-slider-item">
+              <a href="#">
+                <img src="img/2.jpg">
+              </a>
+            </div>
+            <!-- 第三张 -->
+            <div class="mui-slider-item">
+              <a href="#">
+                <img src="img/3.jpg">
+              </a>
+            </div>
+            <!-- 第四张 -->
+            <div class="mui-slider-item">
+              <a href="#">
+                <img src="img/4.jpg">
+              </a>
+            </div>
+            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+              <a href="#">
+                <img src="img/1.jpg">
+              </a>
+            </div>
+          </div>
+          <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+            <div class="mui-indicator"></div>
+            <div class="mui-indicator"></div>
+          </div>
+        </div>
+        
+      
+		
+        <ul class="mui-table-view" id="mui-table-view">
+        	
+            <li class="mui-table-view-cell mui-media">
+                <!--<a href="javascript:;" id="xinwen1">-->
+            	<!--<a name="123" href="javascript:location.href='info.html?name='+document.getElementsByName('123')[0].value;">-->
+        		<a href="javascript:location.href='info.php?keyword='+$('#info1').html()" id="xinwen1" >
+					<img class="mui-media-object mui-pull-right" src="article/img/1.jpg">
+                    <div class="mui-media-body">
+                       	<span id="info1" style="word-wrap:break-word;">ATP年终总决赛：费得勒不敌蒂姆</span>
+                        <p class="mui-ellipsis">无缘小组赛开门红</p>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="mui-table-view-cell mui-media">
+                <!--<a href="javascript:;" id="xinwen2">-->
+            	<a href="javascript:location.href='info.php?keyword='+$('#info2').html()" id="xinwen2" >
+                    <img class="mui-media-object mui-pull-right" src="article/img/2.jpg">
+                    <div class="mui-media-body" style="word-break: break-word; word-wrap: break-word;">
+                       	<span id="info2" style="word-break: break-word; word-wrap: break-word;">ATP年终总决赛：纳达尔逆转梅德维德夫</span>
+                        <p class="mui-ellipsis">创造史上最伟大逆转</p>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <!--<a href="javascript:;" id="xinwen2">-->
+            	<a href="javascript:location.href='info.php?keyword='+$('#info3').html()" id="xinwen3" >
+                    <img class="mui-media-object mui-pull-right" src="article/img/3.jpg">
+                    <div class="mui-media-body">
+                       	<span id="info3">2020奥克兰赛名单：梅德韦杰夫领衔</span>
+                        <p class="mui-ellipsis">弗格尼尼在列</p>
+                    </div>
+                </a>
+            </li>
+			<li class="mui-table-view-cell mui-media">
+			    <!--<a href="javascript:;" id="xinwen2">-->
+				<a href="javascript:location.href='info.php?keyword='+$('#info4').html()" id="xinwen4" >
+			        <img class="mui-media-object mui-pull-right" src="article/img/4.jpg">
+			        <div class="mui-media-body">
+			           	<span id="info4">今年温网青少年女单冠军：我的偶像是莎拉波娃</span>
+			            <p class="mui-ellipsis">乌克兰新星斯尼格尔</p>
+			        </div>
+			    </a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+			    <!--<a href="javascript:;" id="xinwen2">-->
+				<a href="javascript:location.href='info.php?keyword='+$('#info5').html()" id="xinwen5" >
+			        <img class="mui-media-object mui-pull-right" src="article/img/5.jpg">
+			        <div class="mui-media-body">
+			           	<span id="info5">西西帕斯畅谈休赛期旅游 从低谷走出的自己更强大</span>
+			            <p class="mui-ellipsis">西西帕斯在冰岛旅游</p>
+			        </div>
+			    </a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+			    <!--<a href="javascript:;" id="xinwen2">-->
+				<a href="javascript:location.href='info.php?keyword='+$('#info6').html()" id="xinwen6" >
+			        <img class="mui-media-object mui-pull-right" src="article/img/6.jpg">
+			        <div class="mui-media-body">
+			           	<span id="info6">安德莱斯库：从小就学会独处 成名后还有些不适应</span>
+			            <p class="mui-ellipsis">夺得美网冠军之后的心态转变</p>
+			        </div>
+			    </a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+			    <!--<a href="javascript:;" id="xinwen2">-->
+				<a href="javascript:location.href='info.php?keyword='+$('#info7').html()" id="xinwen7" >
+			        <img class="mui-media-object mui-pull-right" src="article/img/7.jpg">
+			        <div class="mui-media-body">
+			           	<span id="info7">穆雷因伤推迟冬训备战 或持外卡出战明年澳网</span>
+			            <p class="mui-ellipsis">取消在迈阿密的冬训计划</p>
+			        </div>
+			    </a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+			    <!--<a href="javascript:;" id="xinwen2">-->
+				<a href="javascript:location.href='info.php?keyword='+$('#info8').html()" id="xinwen8" >
+			        <img class="mui-media-object mui-pull-right" src="article/img/8.jpg">
+			        <div class="mui-media-body">
+			           	<span id="info8">2020年巴蒂将和格尔格斯搭档 或将出战大满贯比赛</span>
+			            <p class="mui-ellipsis">或将搭档出战所有的大满贯赛事和WTA高级别赛事</p>
+			        </div>
+			    </a>
+			</li>
+        </ul>  
+        
+        
+        	<div id="pullUp">
+			<span class="pullUpLabel">上拉加载更多</span>
+		</div>
+	  </div>
+       </div>
+       
+    </div>
+
+    <script type="text/javascript" src="js/scroll.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+  	<div style="width: 100%;height: 60px;">
+    </div>
+</body>
+</html>

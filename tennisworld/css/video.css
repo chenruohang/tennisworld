@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*span{
+	font-size: 25px;
+}*/
+
+.top{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+		
+.bottom1{
+	margin-top: 10px;
+	width: 100%;
+	height: 40px;
+	background-color: #e4e4e4;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	align-items: center;
+	display: flex;
+}
+
+.video{
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+		
+.pinglun{
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-image: url(http://175.24.36.208/tennisworld-test/img/pinglun.png);
+	background-size: 100% 100%;
+	margin-left: 5%;
+	margin-right: 2%;
+}
+		
+.zhuanfa{
+	display: inline-block;
+	height: 35px;
+	width: 35px;
+	background-image: url(http://175.24.36.208/tennisworld-test/img/zhuanfa.png);
+	background-size: 100% 100%;
+	margin-left: 5%;
+	margin-right: 2%;
+}
+
+.footer{
+	background-color: #E4E4E4;
+	height: 30px;
+	text-align: center;
+}
+#pullDown, #pullUp {padding:0 10px;height:30px;line-height:30px;color:#888;text-align:center}
